@@ -31,12 +31,15 @@ public class CreateContactTest {
 		int ranNum = random.nextInt(10000);
 		driver.findElement(By.name("lastname")).sendKeys("MavenProject"+ranNum);
 		driver.findElement(By.xpath("//input[@title='Save [Alt+S]']")).click();
+		System.out.println("change done");
+
 	     WebElement signoutButton = driver.findElement(By.xpath("//img[@src='themes/softed/images/user.PNG']"));
 		Actions act =new Actions(driver);
 		act.moveToElement(signoutButton).perform();
 
 		driver.findElement(By.xpath("//a[text()='Sign Out']")).click();
 		driver.quit();
+		
 	}
 
 }
